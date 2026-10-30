@@ -8,7 +8,9 @@ Open `index.html` in a browser. The page also works with JavaScript disabled; Ja
 
 ## Content
 
-The page includes an academic biography, research interests, a manuscript in progress, related research questions, expository interests, and a public GitHub contact link. Research descriptions concern ongoing work; the page does not list these projects as publications or provide manuscript downloads.
+The page includes an academic biography, education, research interests, a manuscript in progress, talks, selected conferences and workshops, teaching experience, expository interests, a downloadable CV, and academic email and GitHub contact links. Research descriptions concern ongoing work; the page does not list these projects as publications or provide manuscript downloads.
+
+`files/John-M-Wheeler-CV.pdf` is the supplied two-page CV, preserved unchanged. The header and CV section open the PDF, and download links are provided in the introduction and CV section. Replace this file to update the downloadable CV and keep the page's education, talks, and teaching entries in sync.
 
 Edit `index.html` to maintain the biography, research descriptions, notes, and public contact links. Update the year of study as needed. Theme colors are defined at the top of the `<style>` block.
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="John M Wheeler is a mathematics Ph.D. student at the University at Albany, SUNY, working with Marco Varisco. Research interests include algebraic K-theory, cyclic homology, and higher category theory.">
+  <meta name="description" content="John M Wheeler is a mathematics Ph.D. student at the University at Albany, SUNY, working with Marco Varisco. Research interests include algebraic K-theory, trace methods, stable homotopy theory, and derived algebraic geometry.">
   <meta name="color-scheme" content="light dark">
   <title>John M Wheeler — Mathematics</title>
   <style>
@@ -21,10 +21,10 @@
     .wrap { width:min(1120px,calc(100% - 96px)); margin:auto; }
     .skip { position:absolute; top:12px; left:12px; padding:8px 16px; background:var(--paper); transform:translateY(-200%); z-index:2; }
     .skip:focus { transform:translateY(0); }
-    header { display:flex; justify-content:space-between; align-items:center; min-height:116px; border-bottom:1px solid var(--line); gap:24px; }
+    header { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; min-height:116px; padding:22px 0; border-bottom:1px solid var(--line); gap:20px 24px; }
     .wordmark { font-weight:650; font-size:18px; letter-spacing:-.7px; text-decoration:none; }
     .wordmark span { color:var(--accent); }
-    nav { display:flex; align-items:center; gap:30px; font-size:14px; }
+    nav { display:flex; flex-wrap:wrap; align-items:center; gap:18px 24px; font-size:14px; }
     nav a { text-decoration:none; }
     .theme { display:grid; place-items:center; width:36px; height:36px; border:1px solid var(--line); border-radius:50%; background:transparent; color:var(--ink); cursor:pointer; }
     .theme:hover { background:var(--soft); }
@@ -66,13 +66,21 @@
     .topics li { padding:20px 0; border-top:1px solid var(--line); }
     .topics h3 { font-size:22px; margin:0; }
     .topics p { color:var(--muted); font-size:15px; margin-top:7px; max-width:580px; }
+    .subheading { font-size:26px; margin-top:34px; }
+    .records { list-style:none; padding:0; margin:22px 0 0; }
+    .records li { padding:20px 0; border-top:1px solid var(--line); }
+    .record-head { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px 20px; }
+    .record-head h3 { margin:0; font-size:22px; }
+    .record-head strong { font-weight:500; }
+    .record-date { color:var(--muted); font:12px/1.7 ui-monospace,monospace; }
+    .record-copy { color:var(--muted); font-size:15px; margin-top:7px; }
     .contact { padding-bottom:72px; }
     .contact .actions { margin-top:24px; }
     footer { display:flex; justify-content:space-between; gap:20px; padding:24px 0 32px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
     footer a { text-decoration:none; }
     @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
     @media (max-width:850px) { .wrap { width:calc(100% - 56px); } .hero { gap:30px; padding:70px 0; } h1 { font-size:61px; } .section { grid-template-columns:150px 1fr; gap:25px; } }
-    @media (max-width:620px) { .wrap { width:calc(100% - 40px); } header { min-height:88px; gap:12px; } .wordmark { font-size:15px; } nav { gap:16px; font-size:12px; } nav .nav-contact { display:none; } .theme { width:30px; height:30px; } .hero { grid-template-columns:1fr; padding:54px 0; gap:38px; } h1 { font-size:65px; letter-spacing:-3px; } .art { width:100%; max-width:360px; justify-self:center; } .section { grid-template-columns:1fr; gap:22px; padding:35px 0 42px; } .section-label { padding:0; } h2 { font-size:30px; } .project { padding:23px; } footer { flex-direction:column; gap:7px; } }
+    @media (max-width:620px) { .wrap { width:calc(100% - 40px); } header { min-height:88px; gap:16px; } .wordmark { font-size:16px; } nav { width:100%; gap:12px 16px; font-size:12px; } .theme { width:30px; height:30px; } .hero { grid-template-columns:1fr; padding:54px 0; gap:38px; } h1 { font-size:65px; letter-spacing:-3px; } .art { width:100%; max-width:360px; justify-self:center; } .section { grid-template-columns:1fr; gap:22px; padding:35px 0 42px; } .section-label { padding:0; } h2 { font-size:30px; } .project { padding:23px; } footer { flex-direction:column; gap:7px; } }
   </style>
   <script>
     // Theme is a visitor preference; storage may be unavailable for local files.
@@ -91,8 +99,10 @@
       <nav aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <a href="#talks">Talks</a>
+        <a href="#teaching">Teaching</a>
         <a href="#notes">Notes</a>
-        <a class="nav-contact" href="#contact">Contact</a>
+        <a href="files/John-M-Wheeler-CV.pdf" aria-label="Curriculum vitae (PDF)">CV <span aria-hidden="true">↗</span></a>
         <button class="theme" id="theme-toggle" type="button" aria-label="Switch to dark theme" hidden>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg>
         </button>
@@ -103,10 +113,10 @@
         <div>
           <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Mathematics · University at Albany</p>
           <h1 id="hero-title">John M<br><em>Wheeler.</em></h1>
-          <p class="intro">I am a <strong>second-year Ph.D. student in mathematics</strong> at the University at Albany, SUNY, working with <strong><a href="https://varisco.info/">Marco Varisco</a></strong>. My interests include algebraic K-theory, cyclic homology, and higher category theory.</p>
+          <p class="intro">I am a <strong>second-year Ph.D. student in mathematics</strong> at the University at Albany, SUNY, working with <strong><a href="https://varisco.info/">Marco Varisco</a></strong>. My interests include algebraic K-theory and trace methods, stable homotopy theory, and derived algebraic geometry.</p>
           <div class="actions">
             <a class="button" href="#research">Current research <span aria-hidden="true">↘</span></a>
-            <a class="text-link" href="#notes">Notes &amp; reading</a>
+            <a class="text-link" href="files/John-M-Wheeler-CV.pdf" download>Download CV (PDF)</a>
           </div>
         </div>
         <div class="art" aria-hidden="true">
@@ -121,6 +131,21 @@
           <h2 id="about-title">Algebraic K-theory and higher categories.</h2>
           <p class="section-copy">My research concerns algebraic K-theory and its relationship with Hochschild and cyclic homology. I am particularly interested in deformation invariance, localization, and descent, and in how these ideas can be expressed in the language of ∞-categories.</p>
           <p class="section-copy">My current work revisits Cortiñas’s infinitesimal K-theory from this perspective, focusing on infinitesimal hypercohomology, tautological characters, and Čech methods.</p>
+          <h3 class="subheading">Education</h3>
+          <ul class="records">
+            <li>
+              <div class="record-head"><strong>University at Albany, SUNY</strong><span class="record-date">2024–present</span></div>
+              <p class="record-copy">Ph.D. in Mathematics, expected 2029 · Advisor: <a href="https://varisco.info/">Marco Varisco</a></p>
+            </li>
+            <li>
+              <div class="record-head"><strong>Union University</strong><span class="record-date">2020–2024</span></div>
+              <p class="record-copy">B.Sc. in Mathematics · Minor in Psychology</p>
+            </li>
+            <li>
+              <div class="record-head"><strong>Siena University</strong><span class="record-date">2018–2020</span></div>
+              <p class="record-copy">Undergraduate coursework</p>
+            </li>
+          </ul>
         </div>
       </section>
       <section class="section" id="research" aria-labelledby="research-title">
@@ -143,8 +168,55 @@
           </article>
         </div>
       </section>
+      <section class="section" id="talks" aria-labelledby="talks-title">
+        <p class="section-label"><span>03</span> Talks &amp; events</p>
+        <div>
+          <h2 id="talks-title">Talks and mathematical meetings.</h2>
+          <h3 class="subheading">Fiberwise Truncations, Equifibered Squares, and the Freudenthal Suspension Theorem</h3>
+          <ul class="records">
+            <li>
+              <div class="record-head"><strong>BUGCAT Conference · Binghamton University</strong><time class="record-date" datetime="2025-11-16">November 16, 2025</time></div>
+            </li>
+            <li>
+              <div class="record-head"><strong>UAlbany Graduate Student Seminar</strong><time class="record-date" datetime="2025-11-12">November 12, 2025</time></div>
+            </li>
+          </ul>
+          <h3 class="subheading">Selected conferences &amp; workshops attended</h3>
+          <ul class="records">
+            <li>
+              <div class="record-head"><strong>Upstate New York Topology Seminar</strong><span class="record-date">September 18–20, 2026</span></div>
+              <p class="record-copy">Union College · Schenectady, NY</p>
+            </li>
+            <li>
+              <div class="record-head"><strong>Summer School on Homotopy Colimits</strong><span class="record-date">June 22–26, 2026</span></div>
+              <p class="record-copy">University of Regina · Regina, SK</p>
+            </li>
+            <li>
+              <div class="record-head"><strong>FRG Workshop on Higher Categories and Geometry</strong><span class="record-date">March 16–18, 2026</span></div>
+              <p class="record-copy">NITMB · Chicago, IL</p>
+            </li>
+          </ul>
+          <p class="section-copy">A full list of conferences and workshops is included in my <a href="files/John-M-Wheeler-CV.pdf">CV (PDF)</a>.</p>
+        </div>
+      </section>
+      <section class="section" id="teaching" aria-labelledby="teaching-title">
+        <p class="section-label"><span>04</span> Teaching</p>
+        <div>
+          <h2 id="teaching-title">Teaching at UAlbany.</h2>
+          <ul class="records">
+            <li>
+              <div class="record-head"><h3>AMAT 100 · Precalculus Mathematics</h3><span class="record-date">Fall 2026</span></div>
+              <p class="record-copy">University at Albany, SUNY</p>
+            </li>
+            <li>
+              <div class="record-head"><h3>Graduate Teaching Assistant</h3><span class="record-date">January 2025–present</span></div>
+              <p class="record-copy">University at Albany, SUNY · Tutoring for undergraduate courses, exam proctoring, and grading.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
       <section class="section" id="notes" aria-labelledby="notes-title">
-        <p class="section-label"><span>03</span> Notes &amp; reading</p>
+        <p class="section-label"><span>05</span> Notes &amp; reading</p>
         <div>
           <h2 id="notes-title">Topics I am working through.</h2>
           <p class="section-copy">Alongside my research, I write expository notes on the categorical and homological tools that enter these questions. Current topics include:</p>
@@ -164,12 +236,26 @@
           </ul>
         </div>
       </section>
-      <section class="section contact" id="contact" aria-labelledby="contact-title">
-        <p class="section-label"><span>04</span> Contact</p>
+      <section class="section" id="cv" aria-labelledby="cv-title">
+        <p class="section-label"><span>06</span> Curriculum vitae</p>
         <div>
-          <h2 id="contact-title">Find me online.</h2>
-          <p class="section-copy">You can find my public repositories and follow my work on GitHub.</p>
-          <div class="actions"><a class="button" href="https://github.com/JohnMWheeler">Find me on GitHub <span aria-hidden="true">↗</span></a></div>
+          <h2 id="cv-title">Curriculum vitae.</h2>
+          <p class="section-copy">My CV includes my education, talks, conference participation, teaching experience, and skills.</p>
+          <div class="actions">
+            <a class="button" href="files/John-M-Wheeler-CV.pdf">View CV (PDF) <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="files/John-M-Wheeler-CV.pdf" download>Download PDF · 2 pages</a>
+          </div>
+        </div>
+      </section>
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <p class="section-label"><span>07</span> Contact</p>
+        <div>
+          <h2 id="contact-title">Get in touch.</h2>
+          <p class="section-copy">You can reach me at <a href="mailto:jwheeler4@albany.edu">jwheeler4@albany.edu</a>. I am based in Albany, New York.</p>
+          <div class="actions">
+            <a class="button" href="mailto:jwheeler4@albany.edu">Email me <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="https://github.com/JohnMWheeler">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </section>
     </main>
