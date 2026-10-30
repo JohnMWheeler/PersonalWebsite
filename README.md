@@ -1,6 +1,6 @@
 # PersonalWebsite
 
-A responsive academic website for John Wheeler, a second-year mathematics Ph.D. student at the University at Albany, SUNY, working with Marco Varisco. All styles and scripts are included in `index.html`; no dependencies or build process are required.
+A responsive academic website for John M Wheeler, a second-year mathematics Ph.D. student at the University at Albany, SUNY, working with Marco Varisco. All styles and scripts are included in `index.html`; no dependencies or build process are required.
 
 ## View it
 
