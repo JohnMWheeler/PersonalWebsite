@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The personal website of JohnMWheeler. A home for projects, ideas, and things worth sharing.">
+  <meta name="description" content="John Wheeler is a mathematics Ph.D. student at the University at Albany, SUNY, working with Marco Varisco. Research interests include algebraic K-theory, cyclic homology, and higher category theory.">
   <meta name="color-scheme" content="light dark">
-  <title>JohnMWheeler — Personal website</title>
+  <title>John Wheeler — Mathematics</title>
   <style>
     :root { --paper:#f6f5ef; --ink:#263c32; --muted:#657168; --line:#d8ddd3; --accent:#b4442c; --soft:#e8ecdf; --card:#eeeee5; }
     :root[data-theme="dark"] { --paper:#19271f; --ink:#e9eddf; --muted:#b0baab; --line:#3d4b3f; --accent:#ffad90; --soft:#2a3a2d; --card:#223226; }
@@ -62,6 +62,10 @@
     .project small { color:var(--muted); font:10px/1.5 ui-monospace,monospace; letter-spacing:1.3px; text-transform:uppercase; }
     h3 { font:25px/1.3 Georgia,serif; margin-top:8px; }
     .project p { color:var(--muted); margin-top:10px; font-size:15px; max-width:520px; }
+    .topics { list-style:none; padding:0; margin:28px 0 0; }
+    .topics li { padding:20px 0; border-top:1px solid var(--line); }
+    .topics h3 { font-size:22px; margin:0; }
+    .topics p { color:var(--muted); font-size:15px; margin-top:7px; max-width:580px; }
     .contact { padding-bottom:72px; }
     .contact .actions { margin-top:24px; }
     footer { display:flex; justify-content:space-between; gap:20px; padding:24px 0 32px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
@@ -83,10 +87,11 @@
   <a class="skip" href="#main">Skip to content</a>
   <div class="wrap" id="top">
     <header>
-      <a class="wordmark" href="#top" aria-label="JohnMWheeler home">JohnMWheeler<span>.</span></a>
+      <a class="wordmark" href="#top" aria-label="John Wheeler home">John Wheeler<span>.</span></a>
       <nav aria-label="Main navigation">
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#notes">Notes</a>
         <a class="nav-contact" href="#contact">Contact</a>
         <button class="theme" id="theme-toggle" type="button" aria-label="Switch to dark theme" hidden>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg>
@@ -96,59 +101,81 @@
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <div>
-          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> A personal space</p>
-          <h1 id="hero-title">A little corner<br>of the <em>internet.</em></h1>
-          <!-- Replace this introduction with your name, role, and a short bio. -->
-          <p class="intro">I'm <strong>@JohnMWheeler</strong>. Welcome to my home on the web — a place for projects, ideas, and things worth sharing.</p>
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Mathematics · University at Albany</p>
+          <h1 id="hero-title">John<br><em>Wheeler.</em></h1>
+          <p class="intro">I am a <strong>second-year Ph.D. student in mathematics</strong> at the University at Albany, SUNY, working with <strong>Marco Varisco</strong>. My interests include algebraic K-theory, cyclic homology, and higher category theory.</p>
           <div class="actions">
-            <a class="button" href="#projects">Explore my projects <span aria-hidden="true">↘</span></a>
-            <a class="text-link" href="#about">A bit about me</a>
+            <a class="button" href="#research">Current research <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="#notes">Notes &amp; reading</a>
           </div>
         </div>
         <div class="art" aria-hidden="true">
           <div class="orbit"></div><div class="orbit two"></div><div class="orbit three"></div>
-          <span class="asterisk">*</span><span class="sun"></span>
-          <span class="art-caption">Room for a new perspective</span>
+          <span class="asterisk">∞</span><span class="sun"></span>
+          <span class="art-caption">Algebra · Topology · Categories</span>
         </div>
       </section>
       <section class="section" id="about" aria-labelledby="about-title">
         <p class="section-label"><span>01</span> About</p>
         <div>
-          <h2 id="about-title">A website, always in progress.</h2>
-          <!-- Starter copy: replace with your background and interests. -->
-          <p class="section-copy">I'm putting together a space that feels like me. Over time, you'll find what I'm working on, what I'm learning, and the ideas I want to keep exploring.</p>
-          <p class="section-copy">For now, this is the beginning. Thanks for stopping by.</p>
+          <h2 id="about-title">Algebraic K-theory and higher categories.</h2>
+          <p class="section-copy">My research concerns algebraic K-theory and its relationship with Hochschild and cyclic homology. I am particularly interested in deformation invariance, localization, and descent, and in how these ideas can be expressed in the language of ∞-categories.</p>
+          <p class="section-copy">My current work revisits Cortiñas’s infinitesimal K-theory from this perspective, focusing on infinitesimal hypercohomology, tautological characters, and Čech methods.</p>
         </div>
       </section>
-      <section class="section" id="projects" aria-labelledby="projects-title">
-        <p class="section-label"><span>02</span> Projects</p>
+      <section class="section" id="research" aria-labelledby="research-title">
+        <p class="section-label"><span>02</span> Research</p>
         <div>
           <div class="section-top">
-            <h2 id="projects-title">Things I'm working on.</h2>
-            <a href="https://github.com/JohnMWheeler">My GitHub <span aria-hidden="true">↗</span></a>
+            <h2 id="research-title">Current work.</h2>
           </div>
-          <!-- Replace this honest empty state with real projects and their links. -->
-          <div class="project">
-            <div class="project-icon" aria-hidden="true">↗</div>
-            <small>Coming soon</small>
-            <h3>Good things start somewhere.</h3>
-            <p>This space is ready for my first featured project. In the meantime, you can find me on GitHub.</p>
-          </div>
+          <article class="project" aria-labelledby="infinitesimal-title">
+            <div class="project-icon" aria-hidden="true">K</div>
+            <small>Manuscript in progress</small>
+            <h3 id="infinitesimal-title">Revisiting Infinitesimal K-Theory via Localizations</h3>
+            <p>I am developing an ∞-categorical reformulation of Cortiñas’s infinitesimal hypercohomology and tautological character. The project studies their universal properties through localization and their relationship with the rational Jones–Goodwillie character.</p>
+          </article>
+          <article class="project" aria-labelledby="cech-title">
+            <div class="project-icon" aria-hidden="true">Δ</div>
+            <small>Related research questions</small>
+            <h3 id="cech-title">Čech methods and spectral convergence</h3>
+            <p>I study Čech descriptions of infinitesimal hypercohomology and the convergence of the associated spectral sequences. A central concern is the role of totalization towers and derived inverse limits in comparisons with rational K-theory.</p>
+          </article>
+        </div>
+      </section>
+      <section class="section" id="notes" aria-labelledby="notes-title">
+        <p class="section-label"><span>03</span> Notes &amp; reading</p>
+        <div>
+          <h2 id="notes-title">Topics I am working through.</h2>
+          <p class="section-copy">Alongside my research, I write expository notes on the categorical and homological tools that enter these questions. Current topics include:</p>
+          <ul class="topics">
+            <li>
+              <h3>Hochschild and cyclic homology</h3>
+              <p>Mixed complexes, negative cyclic homology, and their connections with algebraic K-theory.</p>
+            </li>
+            <li>
+              <h3>Descent and higher categories</h3>
+              <p>Sheaves, Čech constructions, ∞-topoi, and the distinction between a site presentation and its intrinsic categorical structure.</p>
+            </li>
+            <li>
+              <h3>Homotopy limits and spectral sequences</h3>
+              <p>Totalization, the Bousfield–Kan spectral sequence, and the Milnor exact sequence for towers of spectra.</p>
+            </li>
+          </ul>
         </div>
       </section>
       <section class="section contact" id="contact" aria-labelledby="contact-title">
-        <p class="section-label"><span>03</span> Connect</p>
+        <p class="section-label"><span>04</span> Contact</p>
         <div>
-          <h2 id="contact-title">Keep in touch.</h2>
-          <!-- Add your public email or other contact links when ready. -->
-          <p class="section-copy">You can find my profile and follow along on GitHub.</p>
+          <h2 id="contact-title">Find me online.</h2>
+          <p class="section-copy">You can find my public repositories and follow my work on GitHub.</p>
           <div class="actions"><a class="button" href="https://github.com/JohnMWheeler">Find me on GitHub <span aria-hidden="true">↗</span></a></div>
         </div>
       </section>
     </main>
     <footer>
-      <p>© <span id="year">2026</span> JohnMWheeler</p>
-      <p>A small space on the open web. <a href="#top">Back to top ↑</a></p>
+      <p>© <span id="year">2026</span> John Wheeler</p>
+      <p>Mathematics · University at Albany, SUNY · <a href="#top">Back to top ↑</a></p>
     </footer>
   </div>
   <script>

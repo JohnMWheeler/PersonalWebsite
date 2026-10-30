@@ -1,14 +1,16 @@
 # PersonalWebsite
 
-A responsive personal website for `JohnMWheeler`, ready for GitHub Pages. All styles and scripts are included in `index.html`; no dependencies or build process are required.
+A responsive academic website for John Wheeler, a second-year mathematics Ph.D. student at the University at Albany, SUNY, working with Marco Varisco. All styles and scripts are included in `index.html`; no dependencies or build process are required.
 
 ## View it
 
 Open `index.html` in a browser. The page also works with JavaScript disabled; JavaScript adds a theme switcher and updates the copyright year.
 
-## Personalize it
+## Content
 
-Edit `index.html` to update your name, page title, description, introduction, About text, projects, and public contact links. HTML comments identify the starter content. The current biography and project section are starter copy, not a completed profile. Theme colors are defined at the top of the `<style>` block.
+The page includes an academic biography, research interests, a manuscript in progress, related research questions, expository interests, and a public GitHub contact link. Research descriptions concern ongoing work; the page does not list these projects as publications or provide manuscript downloads.
+
+Edit `index.html` to maintain the biography, research descriptions, notes, and public contact links. Update the year of study as needed. Theme colors are defined at the top of the `<style>` block.
 
 ## Publish with GitHub Pages
 
