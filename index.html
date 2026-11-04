@@ -46,11 +46,12 @@
     .orbit { position:absolute; width:68%; height:68%; border:1px solid var(--ink); border-radius:50%; opacity:.2; }
     .orbit.two { width:85%; height:35%; transform:rotate(-35deg); }
     .orbit.three { width:35%; height:85%; transform:rotate(-35deg); }
-    .sdot { position:relative; width:78%; height:auto; color:var(--ink); transform:translate(-2%,6%); overflow:visible; }
+    .sdot { position:relative; width:78%; height:auto; color:var(--ink); transform:translate(0,4%); overflow:visible; }
     .sdot .arrows path { fill:none; stroke:currentColor; stroke-width:1.3; stroke-linecap:round; stroke-linejoin:round; }
     .sdot .arrows path.hl { stroke:var(--accent); stroke-width:1.6; }
-    .sdot text { fill:currentColor; font:italic 26px/1 Georgia,serif; text-anchor:middle; }
-    .sdot text.z { font-style:normal; opacity:.55; }
+    .sdot text { fill:currentColor; font:27px/1 Georgia,serif; text-anchor:middle; }
+    .sdot .i { font-style:italic; }
+    .sdot text.lbl { font-size:15px; font-style:italic; fill:var(--accent); }
     .section { border-top:1px solid var(--line); padding:54px 0 62px; display:grid; grid-template-columns:220px 1fr; gap:48px; }
     .section-label { font:11px/1.5 ui-monospace,monospace; letter-spacing:1.8px; text-transform:uppercase; padding-top:9px; display:flex; gap:16px; }
     .section-label span { color:var(--muted); }
@@ -123,9 +124,9 @@
         </div>
         <div class="art" aria-hidden="true">
           <div class="orbit"></div><div class="orbit two"></div><div class="orbit three"></div>
-          <svg class="sdot" viewBox="0 0 340 330">
-            <g class="arrows"><path d="M70 52H104M97 47L104 52L97 57M70 47L77 52L70 57"/><path class="hl" d="M148 52H182M175 47L182 52L175 57M148 47L155 52L148 57"/><path class="hl" d="M126 68V112M121 105L126 112L131 105M121 99L126 106L131 99"/><path d="M226 52H260M253 47L260 52L253 57M226 47L233 52L226 57"/><path class="hl" d="M204 68V112M199 105L204 112L209 105M199 99L204 106L209 99"/><path d="M282 68V112M277 105L282 112L287 105M277 99L282 106L287 99"/><path class="hl" d="M148 130H182M175 125L182 130L175 135M148 125L155 130L148 135"/><path d="M226 130H260M253 125L260 130L253 135M226 125L233 130L226 135"/><path d="M204 146V190M199 183L204 190L209 183M199 177L204 184L209 177"/><path d="M282 146V190M277 183L282 190L287 183M277 177L282 184L287 177"/><path d="M226 208H260M253 203L260 208L253 213M226 203L233 208L226 213"/><path d="M282 224V268M277 261L282 268L287 261M277 255L282 262L287 255"/></g>
-            <g class="labels"><text x="48" y="58" class="z">0</text><text x="126" y="58">A<tspan dy="6" font-size="15">01</tspan></text><text x="204" y="58">A<tspan dy="6" font-size="15">02</tspan></text><text x="282" y="58">A<tspan dy="6" font-size="15">03</tspan></text><text x="126" y="136" class="z">0</text><text x="204" y="136">A<tspan dy="6" font-size="15">12</tspan></text><text x="282" y="136">A<tspan dy="6" font-size="15">13</tspan></text><text x="204" y="214" class="z">0</text><text x="282" y="214">A<tspan dy="6" font-size="15">23</tspan></text><text x="282" y="292" class="z">0</text></g>
+          <svg class="sdot" viewBox="0 0 350 290">
+            <g class="arrows"><path class="hl" d="M126 83H214M207 78L214 83L207 88"/><path class="hl" d="M138 203H200M193 198L200 203L193 208"/><path d="M78 104V180M73 173L78 180L83 173"/><path d="M272 104V180M267 173L272 180L277 173"/><path d="M100 128H116V112"/></g>
+            <g class="labels"><text x="78" y="92">K(<tspan class="i">A</tspan>)</text><text x="272" y="92">TC(<tspan class="i">A</tspan>)</text><text x="78" y="212">K(<tspan class="i">A</tspan>/<tspan class="i">I</tspan>)</text><text x="272" y="212">TC(<tspan class="i">A</tspan>/<tspan class="i">I</tspan>)</text><text class="lbl" x="170" y="72">trc</text><text class="lbl" x="169" y="192">trc</text></g>
           </svg>
         </div>
       </section>
