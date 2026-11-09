@@ -1,6 +1,6 @@
 # PersonalWebsite
 
-A responsive academic website for John M Wheeler, a second-year mathematics Ph.D. student at the University at Albany, SUNY, working with Marco Varisco. All styles and scripts are included in `index.html`; no dependencies or build process are required.
+A responsive academic website for John M Wheeler, a second-year mathematics Ph.D. student at the University at Albany, SUNY, working with Marco Varisco. The site uses plain HTML, CSS, and JavaScript and requires no dependencies or build process.
 
 ## View it
 
@@ -12,7 +12,9 @@ The page includes an academic biography, education, research interests, a manusc
 
 `files/John-M-Wheeler-CV.pdf` is the supplied two-page CV, preserved unchanged. The header and CV section open the PDF, and download links are provided in the introduction and CV section. Replace this file to update the downloadable CV and keep the page's education, talks, and teaching entries in sync.
 
-Edit `index.html` to maintain the biography, research descriptions, notes, and public contact links. Update the year of study as needed. Theme colors are defined at the top of the `<style>` block.
+Edit `index.html` to maintain the biography, research descriptions, notes, and public contact links. Update the year of study as needed. Theme colors are defined at the top of `site.css`.
+
+The Miscellany tab is in `misc.html`. Its gallery images are in `files/photos/`.
 
 ## Publish with GitHub Pages
 
