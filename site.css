@@ -127,6 +127,7 @@ nav a[aria-current="page"] { color:var(--accent); text-decoration:underline; }
 .page-intro { padding:58px 0 38px; }
 .page-intro h1 { margin:0; }
 .photos { padding:28px 0 62px; border-top:1px solid var(--line); }
+.photo-gallery { margin-top:28px; }
 .photo-row { display:grid; gap:20px; }
 .photo-row-lead { grid-template-columns:2.17fr 1fr; }
 .photo-row-more { grid-template-columns:1fr 1.78fr 1fr; margin-top:24px; }

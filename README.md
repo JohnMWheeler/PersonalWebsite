@@ -14,7 +14,7 @@ The page includes an academic biography, education, research interests, a manusc
 
 Edit `index.html` to maintain the biography, research descriptions, notes, and public contact links. Update the year of study as needed. Theme colors are defined at the top of `site.css`.
 
-The Miscellany tab is in `misc.html`. Its gallery images are in `files/photos/`.
+The Photos section is in `index.html`; its images are in `files/photos/`. `misc.html` redirects old links to it.
 
 ## Publish with GitHub Pages
 
