@@ -1,0 +1,37 @@
+/* Tabbed layout: one section at a time below the intro.
+   Applies only when layout-tabs.js adds .tabbed to <html>; without JavaScript,
+   or with ?layout=classic in the URL, the full single-scroll page is shown. */
+.tabbed .hero { padding:64px 0 52px; }
+.tabbed .art { width:100%; max-width:360px; justify-self:end; }
+.tabbed main > .section,
+.tabbed main > .interlude { display:none; }
+.tabbed main > .section.is-active,
+.tabbed main > .interlude.is-active { display:grid; }
+.tabbed main > .section.is-active { border-top:0; padding-top:40px; }
+
+.panel-tabs {
+  display:flex; flex-wrap:wrap; gap:0 30px;
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  font:11px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;
+  letter-spacing:1.8px; text-transform:uppercase;
+  scroll-margin-top:0;
+}
+.panel-tabs a {
+  display:flex; gap:10px; padding:16px 0 14px;
+  color:var(--muted); text-decoration:none;
+  border-bottom:2px solid transparent; margin-bottom:-1px;
+}
+.panel-tabs a span { opacity:.65; }
+.panel-tabs a:hover { color:var(--ink); }
+.panel-tabs a[aria-current="true"] { color:var(--ink); border-bottom-color:var(--accent); }
+.panel-tabs a[aria-current="true"] span { color:var(--accent); opacity:1; }
+
+@media (max-width:620px) {
+  .tabbed .hero { padding:40px 0 34px; gap:28px; }
+  .tabbed .art { max-width:260px; justify-self:center; }
+  .panel-tabs { gap:0 18px; }
+  .panel-tabs a { padding:12px 0 10px; }
+  .panel-tabs a span { display:none; }
+  .tabbed main > .section.is-active { padding-top:28px; }
+  .tabbed main > .section .section-label { display:none; } /* the active tab already names it */
+}

@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       group.lists.push(list);
       group.wrapped ||= [...list.querySelectorAll('.record-head')].some((head) => {
         const date = head.querySelector('.record-date');
-        return date && date.getBoundingClientRect().top >= head.firstElementChild.getBoundingClientRect().bottom - 2;
+        return date && date.getClientRects().length && date.getBoundingClientRect().top >= head.firstElementChild.getBoundingClientRect().bottom - 2;
       });
       groups.set(key, group);
     }

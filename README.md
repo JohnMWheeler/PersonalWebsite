@@ -30,3 +30,7 @@ The expected website address is **https://johnmwheeler.github.io/PersonalWebsite
 Opening an HTML file in GitHub shows its source. Use the GitHub Pages address to view the rendered website.
 
 GitHub Pages must be enabled in the repository settings; uploading HTML alone does not enable hosting. The `.nojekyll` file tells Pages to serve the static files directly. All in-page links work when the site is served from `/PersonalWebsite/` or opened locally.
+
+## Layout
+
+The homepage uses a tabbed layout (`layout-tabs.css`, `layout-tabs.js`): the introduction stays at the top and one section shows at a time. Add `?layout=classic` to the URL to preview the original single long page. To return to it permanently, delete the two `layout-tabs` lines in the `<head>` of `index.html`. Without JavaScript, the page shows every section in one scroll.
