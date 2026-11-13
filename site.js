@@ -19,6 +19,42 @@ document.addEventListener('DOMContentLoaded', () => {
     link?.addEventListener('click', openLinkedSection);
   }
 
+  function openDisclosureForHash() {
+    const target = window.location.hash && document.getElementById(window.location.hash.slice(1));
+    if (target instanceof HTMLDetailsElement) target.open = true;
+  }
+  openDisclosureForHash();
+  window.addEventListener('hashchange', openDisclosureForHash);
+
+  // Dates sit beside their titles until any one in a group would wrap; then
+  // every date in that group (same section and list type) moves below its title.
+  const dateLists = [...document.querySelectorAll('ul')].filter((list) => list.querySelector(':scope > li .record-head .record-date'));
+  function stackDatesConsistently() {
+    const closed = [...document.querySelectorAll('details:not([open])')];
+    for (const list of dateLists) list.classList.remove('dates-stacked');
+    for (const details of closed) details.open = true; // measure hidden lists too; restored before paint
+    const groups = new Map();
+    for (const list of dateLists) {
+      const key = (list.closest('section')?.id || '') + '|' + list.className;
+      const group = groups.get(key) || { lists: [], wrapped: false };
+      group.lists.push(list);
+      group.wrapped ||= [...list.querySelectorAll('.record-head')].some((head) => {
+        const date = head.querySelector('.record-date');
+        return date && date.getBoundingClientRect().top >= head.firstElementChild.getBoundingClientRect().bottom - 2;
+      });
+      groups.set(key, group);
+    }
+    for (const details of closed) details.open = false;
+    for (const group of groups.values()) {
+      if (group.wrapped) for (const list of group.lists) list.classList.add('dates-stacked');
+    }
+  }
+  if (dateLists.length) {
+    let frame = 0;
+    new ResizeObserver(() => { cancelAnimationFrame(frame); frame = requestAnimationFrame(stackDatesConsistently); }).observe(document.body);
+    document.fonts?.ready.then(stackDatesConsistently);
+  }
+
   document.getElementById('year').textContent = new Date().getFullYear();
   const toggle = document.getElementById('theme-toggle');
   function updateThemeLabel() {
