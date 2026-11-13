@@ -92,7 +92,7 @@ h3 { font:25px/1.3 Georgia,serif; margin-top:8px; }
 .subheading { font-size:26px; margin-top:34px; }
 .talk-entry { margin-top:22px; padding:20px 0 0; border-top:1px solid var(--line); min-width:0; }
 .talk-title { margin:0; font:22px/1.35 Georgia,serif; }
-.talk-venues { list-style:none; margin:7px 0 0; padding:0; color:var(--muted); font-size:15px; }
+.talk-venues { list-style:disc; margin:14px 0 0; padding-inline-start:1.2em; color:var(--muted); font-size:15px; }
 .talk-venues .record-head { row-gap:2px; }
 .talk-venues li + li { margin-top:6px; }
 .event-year { border-top:1px solid var(--line); }
