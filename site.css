@@ -27,6 +27,19 @@ nav a { text-decoration:none; }
 h1,h2,h3,p { margin:0; }
 h1 { margin:25px 0; font:clamp(56px,6.5vw,85px)/1.02 Georgia,"Times New Roman",serif; font-weight:400; letter-spacing:-3.8px; }
 h1 em { font-weight:400; color:var(--accent); }
+.hero-photo-placeholder {
+  display:grid;
+  place-items:center;
+  width:min(120px,100%);
+  aspect-ratio:4 / 5;
+  margin:0 0 24px;
+  padding:8px;
+  border:1px dashed var(--muted);
+  border-radius:4px;
+  color:var(--muted);
+  font-size:13px;
+  text-align:center;
+}
 .intro { color:var(--muted); max-width:430px; font-size:17px; }
 .intro + .intro { margin-top:14px; }
 .intro strong { color:var(--ink); font-weight:500; }
