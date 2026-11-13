@@ -33,5 +33,5 @@
   .panel-tabs a { padding:12px 0 10px; }
   .panel-tabs a span { display:none; }
   .tabbed main > .section.is-active { padding-top:28px; }
-  .tabbed main > .section .section-label { display:none; } /* the active tab already names it */
+  .tabbed main > .section > .section-label { display:none; } /* the active tab already names it */
 }
