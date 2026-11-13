@@ -27,6 +27,7 @@ h1,h2,h3,p { margin:0; }
 h1 { margin:25px 0; font:clamp(56px,6.5vw,85px)/1.02 Georgia,"Times New Roman",serif; font-weight:400; letter-spacing:-3.8px; }
 h1 em { font-weight:400; color:var(--accent); }
 .intro { color:var(--muted); max-width:430px; font-size:17px; }
+.intro + .intro { margin-top:14px; }
 .intro strong { color:var(--ink); font-weight:500; }
 .actions { display:flex; gap:26px; align-items:center; flex-wrap:wrap; margin-top:32px; font-size:14px; }
 .button { display:inline-flex; align-items:center; gap:22px; background:var(--ink); color:var(--paper); padding:12px 19px; border-radius:3px; text-decoration:none; }

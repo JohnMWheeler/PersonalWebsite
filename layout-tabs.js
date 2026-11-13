@@ -10,11 +10,14 @@
     const hero = main.querySelector(':scope > .hero');
     if (!sections.length || !hero) return;
 
-    // Each diagram interlude belongs to the section just above it.
+    // Each diagram interlude belongs to the section just above it, or the one
+    // below it when it comes before every section.
     const interludes = new Map();
     for (const figure of main.querySelectorAll(':scope > .interlude')) {
       const previous = figure.previousElementSibling;
+      const next = figure.nextElementSibling;
       if (sections.includes(previous)) interludes.set(figure, previous);
+      else if (sections.includes(next)) interludes.set(figure, next);
     }
 
     const tabs = document.createElement('nav');
