@@ -1,6 +1,8 @@
 /* Tabbed layout: one section at a time below the intro.
    Applies only when layout-tabs.js adds .tabbed to <html>; without JavaScript,
    or with ?layout=classic in the URL, the full single-scroll page is shown. */
+.tabbed #top > header { border-bottom:0; padding-bottom:0; }
+.tabbed #top > header > .panel-tabs { width:100%; }
 .tabbed .hero { padding:64px 0 52px; }
 .tabbed .art { width:100%; max-width:360px; justify-self:end; }
 .tabbed main > .section,
