@@ -6,6 +6,19 @@ try {
 } catch (_) { /* The default light theme remains usable. */ }
 
 document.addEventListener('DOMContentLoaded', () => {
+  for (const disclosure of document.querySelectorAll('.section-disclosure')) {
+    const fragment = '#' + disclosure.closest('section').id;
+    const link = document.querySelector('nav a[href="' + fragment + '"]');
+
+    function openLinkedSection() {
+      if (window.location.hash === fragment) disclosure.open = true;
+    }
+
+    openLinkedSection();
+    window.addEventListener('hashchange', openLinkedSection);
+    link?.addEventListener('click', openLinkedSection);
+  }
+
   document.getElementById('year').textContent = new Date().getFullYear();
   const toggle = document.getElementById('theme-toggle');
   function updateThemeLabel() {
