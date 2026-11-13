@@ -6,7 +6,7 @@
   <meta name="description" content="John M Wheeler is a second-year mathematics Ph.D. student at the University at Albany, SUNY, working with Marco Varisco. Research interests include algebraic K-theory, trace methods, stable homotopy theory, and derived algebraic geometry.">
   <meta name="color-scheme" content="light dark">
   <title>John M Wheeler — Mathematics</title>
-  <link rel="stylesheet" href="site.css?v=cyclic-bar">
+  <link rel="stylesheet" href="site.css?v=simplicial-stacks">
   <script src="site.js?v=section-disclosures"></script>
 </head>
 <body>
@@ -55,17 +55,32 @@
            <p class="section-copy">I received my B.Sc. in Mathematics from Union University (TN) in 2024, where I was a member of the baseball team. Before transferring to Union, I also played two years of baseball at Siena University (NY).</p>
         </div>
       </section>
-      <figure class="interlude" role="img" aria-label="For a unital associative ring spectrum A, THH of A is the geometric realization of its cyclic bar construction. The first three terms are A, A tensor A, and A tensor A tensor A, with tensors over the sphere spectrum. Face maps point left and degeneracy maps point right.">
+      <figure class="interlude" id="thh" role="img" aria-label="For a unital associative ring spectrum A, THH of A is the geometric realization of its cyclic bar construction. The first three terms are A, A tensor A, and A tensor A tensor A, with tensors over the sphere spectrum. Between degrees 1 and 0 there are two leftward face maps and one rightward degeneracy. Between degrees 2 and 1 there are three leftward face maps and two rightward degeneracies.">
         <svg class="sdot cyclic-bar" viewBox="0 0 575 204" aria-hidden="true">
-          <g transform="translate(90 -10)">
-            <defs><radialGradient id="qfadeg" gradientUnits="userSpaceOnUse" cx="180" cy="124" r="520"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient><mask id="qfade" maskUnits="userSpaceOnUse" x="-500" y="-60" width="1360" height="360"><rect x="-500" y="-60" width="1360" height="360" fill="url(#qfadeg)"/></mask></defs><g class="bg lattice" mask="url(#qfade)"><path d="M-500 -60L-860 300M-428 -60L-788 300M-356 -60L-716 300M-284 -60L-644 300M-212 -60L-572 300M-140 -60L-500 300M-68 -60L-428 300M4 -60L-356 300M76 -60L-284 300M148 -60L-212 300M220 -60L-140 300M292 -60L-68 300M364 -60L4 300M436 -60L76 300M508 -60L148 300M580 -60L220 300M652 -60L292 300M724 -60L364 300M796 -60L436 300M868 -60L508 300M940 -60L580 300M1012 -60L652 300M1084 -60L724 300M1156 -60L796 300M-868 -60L-508 300M-796 -60L-436 300M-724 -60L-364 300M-652 -60L-292 300M-580 -60L-220 300M-508 -60L-148 300M-436 -60L-76 300M-364 -60L-4 300M-292 -60L68 300M-220 -60L140 300M-148 -60L212 300M-76 -60L284 300M-4 -60L356 300M68 -60L428 300M140 -60L500 300M212 -60L572 300M284 -60L644 300M356 -60L716 300M428 -60L788 300M500 -60L860 300M572 -60L932 300M644 -60L1004 300M716 -60L1076 300M788 -60L1148 300"/></g>
+          <defs>
+            <pattern id="simplicial-arrows" width="122" height="40" patternUnits="userSpaceOnUse">
+              <path d="M92 8H18l5-3m-5 3 5 3M92 17H18l5-3m-5 3 5 3M18 26H92l-5-3m5 3-5 3"
+                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 4"/>
+            </pattern>
+            <radialGradient id="simplicial-fade" gradientUnits="userSpaceOnUse" cx="287.5" cy="102" r="495">
+              <stop offset="0" stop-color="#fff"/>
+              <stop offset=".5" stop-color="#fff" stop-opacity=".7"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+            </radialGradient>
+            <mask id="simplicial-mask" maskUnits="userSpaceOnUse" x="-272" y="-44" width="1119" height="292">
+              <rect x="-272" y="-44" width="1119" height="292" fill="url(#simplicial-fade)"/>
+            </mask>
+          </defs>
+          <g mask="url(#simplicial-mask)" opacity=".14" fill="url(#simplicial-arrows)">
+            <rect x="-272" y="-44" width="1119" height="101"/>
+            <rect x="-272" y="147" width="1119" height="101"/>
           </g>
           <g class="arrows">
-            <path d="M139 65V139M565 65V139"/>
-            <path d="M224 95H190M194 92L190 95L194 98M224 102H190M194 99L190 102L194 105"/>
-            <path class="hl" d="M190 109H224M220 106L224 109L220 112"/>
-            <path d="M370 88H330M334 85L330 88L334 91M370 95H330M334 92L330 95L334 98M370 102H330M334 99L330 102L334 105"/>
-            <path class="hl" d="M330 109H370M366 106L370 109L366 112M330 116H370M366 113L370 116L366 119"/>
+            <path d="M139 66V138M565 66V138"/>
+            <path d="M224 91H190M195 88L190 91L195 94M224 102H190M195 99L190 102L195 105"/>
+            <path class="hl" d="M190 113H224M219 110L224 113L219 116"/>
+            <path d="M370 80H330M335 77L330 80L335 83M370 91H330M335 88L330 91L335 94M370 102H330M335 99L330 102L335 105"/>
+            <path class="hl" d="M330 113H370M365 110L370 113L365 116M330 124H370M365 121L370 124L365 127"/>
           </g>
           <g class="labels">
             <text x="62" y="110">THH(<tspan class="i">A</tspan>) :=</text>
@@ -83,14 +98,14 @@
             <h2 id="research-title">Current work.</h2>
           </div>
           <article class="project" aria-labelledby="infinitesimal-title">
-            <div class="project-icon" aria-hidden="true">K</div>
+            <div class="project-icon" aria-hidden="true"><i>tr</i></div>
             <small>In progress</small>
             <h3 id="infinitesimal-title">Trace Maps via Localizations</h3>
             <p>By Goodwillie’s theorem, the Jones–Goodwillie trace from rational <i>K</i>-theory to rational negative cyclic homology induces isomorphisms on relative groups for ring surjections with nilpotent kernel. Its fiber is therefore nilinvariant.</p>
 <p> I have been working to recast Cortiñas’s work characterizing the fiber of this trace map using ∞-categories and localizations, and I have recovered his characterization of the trace as the universal such map for associative, possibly nonunital rings.</p>
           </article>
           <article class="project" aria-labelledby="cech-title">
-            <div class="project-icon" aria-hidden="true">Δ</div>
+            <div class="project-icon" aria-hidden="true"><span>𝔼<sub>1</sub></span></div>
             <small>Future directions</small>
             <h3 id="cech-title">Animated Rings and Integral Trace Methods</h3>
             <p>Having recovered Cortiñas’s result for discrete rings, I plan to extend it to animated associative rings and 𝔼₁-ring spectra. A second direction is to study the other leg of the fracture square prime by prime, with the goal of proving an integral version of the result.</p>
