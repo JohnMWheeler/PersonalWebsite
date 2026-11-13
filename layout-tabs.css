@@ -6,7 +6,8 @@
 .tabbed main > .section,
 .tabbed main > .interlude { display:none; }
 .tabbed main > .section.is-active,
-.tabbed main > .interlude.is-active { display:grid; }
+.tabbed main > .interlude.is-active,
+.tabbed main > .section.contact { display:grid; }
 .tabbed main > .section.is-active { border-top:0; padding-top:40px; }
 
 .panel-tabs {

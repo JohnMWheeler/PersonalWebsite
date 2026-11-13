@@ -6,7 +6,8 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     const main = document.getElementById('main');
-    const sections = [...main.querySelectorAll(':scope > section.section[id]')];
+    // Contact is not a tab; it stays at the bottom under every tab.
+    const sections = [...main.querySelectorAll(':scope > section.section[id]:not(.contact)')];
     const hero = main.querySelector(':scope > .hero');
     if (!sections.length || !hero) return;
 
