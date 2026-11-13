@@ -44,7 +44,7 @@ h1 em { font-weight:400; color:var(--accent); }
 .sdot .i { font-style:italic; }
 .interlude { --halo:var(--paper); position:relative; overflow:hidden; margin:0; padding:34px 0 46px; border-top:1px solid var(--line); display:grid; place-items:center; }
 .interlude .sdot { width:100%; max-width:330px; transform:none; }
-.interlude .cyclic-bar { max-width:600px; }
+.interlude .cyclic-bar { max-width:487px; }
 .sdot text.lbl { font-size:15px; font-style:italic; fill:var(--accent); }
 .section { --section-sidebar:220px; --section-gap:48px; border-top:1px solid var(--line); padding:54px 0 62px; display:grid; grid-template-columns:var(--section-sidebar) minmax(0,1fr); gap:var(--section-gap); }
 .section-label { font:11px/1.5 ui-monospace,monospace; letter-spacing:1.8px; text-transform:uppercase; padding-top:9px; display:flex; gap:16px; }
