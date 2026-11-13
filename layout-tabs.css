@@ -36,14 +36,3 @@
   .tabbed main > .section.is-active { padding-top:28px; }
   .tabbed main > .section > .section-label { display:none; } /* the active tab already names it */
 }
-
-/* Slide in the new tab after a swipe or drag. */
-.tabbed main { overflow-x:clip; }
-.tabbed main > .enter-from-right { animation:tab-enter-right .28s ease-out; }
-.tabbed main > .enter-from-left { animation:tab-enter-left .28s ease-out; }
-@keyframes tab-enter-right { from { opacity:0; transform:translateX(40px); } }
-@keyframes tab-enter-left { from { opacity:0; transform:translateX(-40px); } }
-@media (prefers-reduced-motion:reduce) {
-  .tabbed main > .enter-from-right,
-  .tabbed main > .enter-from-left { animation:none; }
-}
