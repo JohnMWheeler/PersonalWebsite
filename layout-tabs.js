@@ -84,5 +84,69 @@
     window.addEventListener('popstate', () => {
       if (!show(window.location.hash.slice(1), { scroll: false })) activate(sections[0]);
     });
+
+    // Swipe (touch) or drag (mouse) left/right below the intro to change tabs.
+    function step(delta) {
+      const current = sections.findIndex((s) => s.classList.contains('is-active'));
+      const next = sections[current + delta];
+      if (!next) return;
+      const motion = delta > 0 ? 'enter-from-right' : 'enter-from-left';
+      show(next.id, { scroll: true, fromTabs: true });
+      for (const el of [next, ...[...interludes].filter(([, owner]) => owner === next).map(([f]) => f)]) {
+        el.classList.remove('enter-from-right', 'enter-from-left');
+        void el.offsetWidth; // restart the animation
+        el.classList.add(motion);
+        el.addEventListener('animationend', () => el.classList.remove(motion), { once: true });
+      }
+      history.pushState(null, '', '#' + next.id);
+    }
+
+    function inSwipeArea(target) {
+      return !hero.contains(target) && main.contains(target);
+    }
+
+    function finishGesture(start, x, y) {
+      const dx = x - start.x;
+      const dy = y - start.y;
+      if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.5) return false;
+      step(dx < 0 ? 1 : -1);
+      return true;
+    }
+
+    let touch = null;
+    main.addEventListener('touchstart', (event) => {
+      touch = event.touches.length === 1 && inSwipeArea(event.target)
+        ? { x: event.touches[0].clientX, y: event.touches[0].clientY }
+        : null;
+    }, { passive: true });
+    main.addEventListener('touchend', (event) => {
+      if (!touch) return;
+      const t = event.changedTouches[0];
+      finishGesture(touch, t.clientX, t.clientY);
+      touch = null;
+    }, { passive: true });
+
+    // Mouse drags switch tabs unless they selected text or began on a control.
+    let drag = null;
+    let suppressClick = false;
+    main.addEventListener('pointerdown', (event) => {
+      drag = event.pointerType === 'mouse' && event.button === 0 && inSwipeArea(event.target)
+        && !event.target.closest('a, button, summary, input, textarea, select')
+        ? { x: event.clientX, y: event.clientY }
+        : null;
+    });
+    window.addEventListener('pointerup', (event) => {
+      if (!drag || event.pointerType !== 'mouse') return;
+      const start = drag;
+      drag = null;
+      if (String(window.getSelection?.() || '').trim()) return;
+      if (finishGesture(start, event.clientX, event.clientY)) suppressClick = true;
+    });
+    main.addEventListener('click', (event) => {
+      if (!suppressClick) return;
+      suppressClick = false;
+      event.preventDefault();
+      event.stopPropagation();
+    }, true);
   });
 })();
