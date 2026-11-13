@@ -90,6 +90,8 @@ h3 { font:25px/1.3 Georgia,serif; margin-top:8px; }
 .section-disclosure-content { margin-inline-start:calc(var(--section-sidebar) + var(--section-gap)); }
 .topics p { color:var(--muted); font-size:15px; margin-top:7px; max-width:580px; }
 .subheading { font-size:26px; margin-top:34px; }
+.talk-title { margin:16px 0 0; font:22px/1.35 Georgia,serif; }
+.record-head .talk-title { margin:0; }
 .event-year { border-top:1px solid var(--line); }
 .event-year:first-of-type { margin-top:22px; }
 .event-year > summary { padding:12px 0; cursor:pointer; font:22px/1.4 Georgia,serif; }
