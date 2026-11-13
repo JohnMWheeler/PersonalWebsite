@@ -13,6 +13,7 @@ button { font:inherit; }
 .skip { position:absolute; top:12px; left:12px; padding:8px 16px; background:var(--paper); transform:translateY(-200%); z-index:2; }
 .skip:focus { transform:translateY(0); }
 header { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; min-height:116px; padding:22px 0; border-bottom:1px solid var(--line); gap:20px 24px; }
+.brand { display:flex; align-items:center; gap:14px; }
 .wordmark { font-weight:650; font-size:18px; letter-spacing:-.7px; text-decoration:none; }
 .wordmark span { color:var(--accent); }
 nav { display:flex; flex-wrap:wrap; align-items:center; gap:18px 24px; font-size:14px; }
