@@ -1,9 +1,10 @@
-// Theme is a visitor preference; storage may be unavailable for local files.
+const siteThemes = ['light', 'dark', 'slate', 'parchment', 'midnight'];
+let siteTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 try {
   const saved = localStorage.getItem('personal-site-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  document.documentElement.dataset.theme = saved === 'dark' || (!saved && prefersDark) ? 'dark' : 'light';
-} catch (_) { /* The default light theme remains usable. */ }
+  if (siteThemes.includes(saved)) siteTheme = saved;
+} catch (_) { /* Storage may be unavailable for local files. */ }
+document.documentElement.dataset.theme = siteTheme;
 
 document.addEventListener('DOMContentLoaded', () => {
   for (const disclosure of document.querySelectorAll('.section-disclosure')) {
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // every date in that group (same section and list type) moves below its title.
   const dateLists = [...document.querySelectorAll('ul')].filter((list) => list.querySelector(':scope > li .record-head .record-date'));
   function stackDatesConsistently() {
-    const closed = [...document.querySelectorAll('details:not([open])')];
+    const closed = [...document.querySelectorAll('main details:not([open])')];
     for (const list of dateLists) list.classList.remove('dates-stacked');
     for (const details of closed) details.open = true; // measure hidden lists too; restored before paint
     const groups = new Map();
@@ -56,16 +57,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.getElementById('year').textContent = new Date().getFullYear();
-  const toggle = document.getElementById('theme-toggle');
-  function updateThemeLabel() {
-    toggle.setAttribute('aria-label', 'Switch to ' + (document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark') + ' theme');
-  }
-  toggle.hidden = false;
-  updateThemeLabel();
-  toggle.addEventListener('click', () => {
-    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.dataset.theme = next;
-    try { localStorage.setItem('personal-site-theme', next); } catch (_) { /* Preference lasts for this visit. */ }
-    updateThemeLabel();
+  const picker = document.getElementById('theme-picker');
+  picker.querySelector('input[value="' + siteTheme + '"]').checked = true;
+  picker.hidden = false;
+  picker.addEventListener('change', (event) => {
+    siteTheme = event.target.value;
+    document.documentElement.dataset.theme = siteTheme;
+    try { localStorage.setItem('personal-site-theme', siteTheme); } catch (_) { /* Applies for this visit. */ }
+  });
+  picker.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && picker.open) {
+      picker.open = false;
+      picker.querySelector('summary').focus();
+    }
+  });
+  document.addEventListener('click', (event) => {
+    if (picker.open && !picker.contains(event.target)) picker.open = false;
   });
 });
