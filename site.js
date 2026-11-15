@@ -1,8 +1,7 @@
-const siteThemes = ['light', 'dark'];
 let siteTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 try {
   const saved = localStorage.getItem('personal-site-theme');
-  if (siteThemes.includes(saved)) siteTheme = saved;
+  if (saved === 'light' || saved === 'dark') siteTheme = saved;
 } catch (_) { /* Storage may be unavailable for local files. */ }
 document.documentElement.dataset.theme = siteTheme;
 
@@ -57,21 +56,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.getElementById('year').textContent = new Date().getFullYear();
-  const picker = document.getElementById('theme-picker');
-  picker.querySelector('input[value="' + siteTheme + '"]').checked = true;
-  picker.hidden = false;
-  picker.addEventListener('change', (event) => {
-    siteTheme = event.target.value;
+  const themeToggle = document.getElementById('theme-toggle');
+  function updateThemeLabel() {
+    const label = siteTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+    themeToggle.setAttribute('aria-label', label);
+    themeToggle.title = label;
+  }
+  updateThemeLabel();
+  themeToggle.hidden = false;
+  themeToggle.addEventListener('click', () => {
+    siteTheme = siteTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = siteTheme;
     try { localStorage.setItem('personal-site-theme', siteTheme); } catch (_) { /* Applies for this visit. */ }
-  });
-  picker.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && picker.open) {
-      picker.open = false;
-      picker.querySelector('summary').focus();
-    }
-  });
-  document.addEventListener('click', (event) => {
-    if (picker.open && !picker.contains(event.target)) picker.open = false;
+    updateThemeLabel();
   });
 });
