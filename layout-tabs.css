@@ -47,7 +47,13 @@
   .panel-tabs { gap:0 18px; }
   .panel-tabs a { padding:12px 0 10px; }
   .panel-tabs a span { display:none; }
-  .masthead-nav { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0 6px; font-size:13px; }
+  .masthead-nav {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) minmax(0,1fr);
+    align-items:start;
+    gap:0 6px;
+    font-size:13px;
+  }
   .tabbed main > .section.is-active { padding-top:28px; }
   .tabbed main > .section > .section-label { display:none; } /* the active tab already names it */
 }

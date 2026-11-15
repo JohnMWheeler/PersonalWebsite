@@ -140,6 +140,7 @@ footer a { text-decoration:none; }
   .masthead {
     grid-template-columns:minmax(0,1fr) auto;
     grid-template-areas:"brand theme" "menu menu";
+    column-gap:12px;
     padding:24px 0 20px;
   }
   .masthead:has(.masthead-nav) { padding-bottom:0; }
