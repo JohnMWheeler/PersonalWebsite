@@ -29,31 +29,18 @@
 
 .masthead-nav {
   grid-area:menu;
-  gap:0 clamp(16px,1.9vw,28px);
+  column-gap:22px;
   border:0;
-  font:500 14px/1.4 system-ui,sans-serif;
-  letter-spacing:normal;
-  text-transform:none;
 }
-.masthead-nav a { width:fit-content; padding:11px 0; margin:0; }
-.masthead-nav a[aria-current="true"] { font-weight:650; }
+.masthead-nav a { padding:11px 0; }
 
-@media (max-width:950px) {
-  .masthead-nav { border-top:1px solid var(--line); }
-}
 @media (max-width:620px) {
   .tabbed .hero { padding-bottom:34px; gap:28px; }
   .tabbed .art { max-width:260px; justify-self:center; }
   .panel-tabs { gap:0 18px; }
   .panel-tabs a { padding:12px 0 10px; }
   .panel-tabs a span { display:none; }
-  .masthead-nav {
-    display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) minmax(0,1fr);
-    align-items:start;
-    gap:0 6px;
-    font-size:13px;
-  }
+  .masthead-nav { column-gap:16px; letter-spacing:1.2px; }
   .tabbed main > .section.is-active { padding-top:28px; }
   .tabbed main > .section > .section-label { display:none; } /* the active tab already names it */
 }
