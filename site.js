@@ -1,4 +1,4 @@
-const siteThemes = ['light', 'dark', 'slate', 'parchment', 'porcelain', 'midnight', 'ember'];
+const siteThemes = ['light', 'dark'];
 let siteTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 try {
   const saved = localStorage.getItem('personal-site-theme');
