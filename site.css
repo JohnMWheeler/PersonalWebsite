@@ -125,7 +125,7 @@ h3 { font:25px/1.3 Georgia,serif; margin-top:8px; }
 .section-disclosure-content { margin-inline-start:calc(var(--section-sidebar) + var(--section-gap)); }
 .topics p { color:var(--muted); font-size:15px; margin-top:7px; max-width:580px; }
 .subheading { font-size:26px; margin-top:34px; }
-.subheading-disclosure { padding-bottom:22px; border-bottom:1px solid var(--line); }
+.subheading-disclosure { padding-bottom:22px; }
 .subheading-disclosure > summary { display:flex; align-items:center; gap:14px; width:fit-content; margin-top:34px; cursor:pointer; list-style:none; }
 .subheading-disclosure > summary .subheading { margin:0; }
 .subheading-disclosure > summary::-webkit-details-marker { display:none; }
