@@ -2,7 +2,6 @@
    Applies only when layout-tabs.js adds .tabbed to <html>; without JavaScript,
    or with ?layout=classic in the URL, the full single-scroll page is shown. */
 .tabbed .hero { padding-bottom:52px; }
-.tabbed .art { width:100%; max-width:360px; justify-self:end; }
 .tabbed main > .section,
 .tabbed main > .interlude { display:none; }
 .tabbed main > .section.is-active,
@@ -35,8 +34,7 @@
 .masthead-nav a { padding:11px 0; }
 
 @media (max-width:620px) {
-  .tabbed .hero { padding-bottom:34px; gap:28px; }
-  .tabbed .art { max-width:260px; justify-self:center; }
+  .tabbed .hero { padding-bottom:34px; }
   .panel-tabs { gap:0 18px; }
   .panel-tabs a { padding:12px 0 10px; }
   .panel-tabs a span { display:none; }
