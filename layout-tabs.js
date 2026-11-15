@@ -37,7 +37,9 @@
     }
     hero.after(tabs);
     const headerTabs = tabs.cloneNode(true);
+    headerTabs.classList.add('masthead-nav');
     headerTabs.setAttribute('aria-label', 'Page sections at top');
+    for (const number of headerTabs.querySelectorAll('span')) number.remove();
     document.querySelector('#top > header').append(headerTabs);
     const tabLinks = [...tabs.querySelectorAll('a'), ...headerTabs.querySelectorAll('a')];
 

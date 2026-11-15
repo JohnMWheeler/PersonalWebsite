@@ -1,9 +1,7 @@
 /* Tabbed layout: one section at a time below the intro.
    Applies only when layout-tabs.js adds .tabbed to <html>; without JavaScript,
    or with ?layout=classic in the URL, the full single-scroll page is shown. */
-.tabbed #top > header { border-bottom:0; padding-bottom:0; }
-.tabbed #top > header > .panel-tabs { width:100%; }
-.tabbed .hero { padding:64px 0 52px; }
+.tabbed .hero { padding-bottom:52px; }
 .tabbed .art { width:100%; max-width:360px; justify-self:end; }
 .tabbed main > .section,
 .tabbed main > .interlude { display:none; }
@@ -29,12 +27,27 @@
 .panel-tabs a[aria-current="true"] { color:var(--ink); border-bottom-color:var(--accent); }
 .panel-tabs a[aria-current="true"] span { color:var(--accent); opacity:1; }
 
+.masthead-nav {
+  grid-area:menu;
+  gap:0 clamp(16px,1.9vw,28px);
+  border:0;
+  font:500 14px/1.4 system-ui,sans-serif;
+  letter-spacing:normal;
+  text-transform:none;
+}
+.masthead-nav a { width:fit-content; padding:11px 0; margin:0; }
+.masthead-nav a[aria-current="true"] { font-weight:650; }
+
+@media (max-width:950px) {
+  .masthead-nav { border-top:1px solid var(--line); }
+}
 @media (max-width:620px) {
-  .tabbed .hero { padding:40px 0 34px; gap:28px; }
+  .tabbed .hero { padding-bottom:34px; gap:28px; }
   .tabbed .art { max-width:260px; justify-self:center; }
   .panel-tabs { gap:0 18px; }
   .panel-tabs a { padding:12px 0 10px; }
   .panel-tabs a span { display:none; }
+  .masthead-nav { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0 6px; font-size:13px; }
   .tabbed main > .section.is-active { padding-top:28px; }
   .tabbed main > .section > .section-label { display:none; } /* the active tab already names it */
 }
