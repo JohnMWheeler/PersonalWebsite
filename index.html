@@ -189,11 +189,21 @@
       </section>
       <figure class="interlude" id="arithmetic-fracture" role="img" aria-label="Arithmetic fracture square of a spectrum X. The top row maps X to the product of its p-completions over all primes p. The vertical maps rationalize both spectra, and the bottom arrow is the rationalization of the completion map. The square is a pullback.">
         <svg class="sdot" viewBox="0 0 360 220" aria-hidden="true">
-          <g class="bg echo">
-            <rect x="43" y="28" width="274" height="161" rx="17"/>
-            <rect x="20" y="10" width="320" height="197" rx="24"/>
-            <rect class="faint" x="-6" y="-9" width="372" height="235" rx="31"/>
-          </g>
+          <defs>
+            <pattern id="fracture-lattice" width="32" height="32" patternUnits="userSpaceOnUse">
+              <path d="M0 0L32 32M32 0L0 32" fill="none" stroke="currentColor" stroke-width=".7"/>
+              <circle cx="16" cy="16" r="1.3" fill="currentColor"/>
+            </pattern>
+            <radialGradient id="fracture-lattice-gradient">
+              <stop offset="0" stop-color="#fff" stop-opacity=".65"/>
+              <stop offset=".55" stop-color="#fff"/>
+              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+            </radialGradient>
+            <mask id="fracture-lattice-mask" x="0" y="0" width="360" height="220" maskUnits="userSpaceOnUse">
+              <rect width="360" height="220" fill="url(#fracture-lattice-gradient)"/>
+            </mask>
+          </defs>
+          <rect width="360" height="220" fill="url(#fracture-lattice)" mask="url(#fracture-lattice-mask)" opacity=".18"/>
           <g class="arrows">
             <path d="M119 51H221m-7-5 7 5-7 5"/>
             <path d="M122 162H198m-7-5 7 5-7 5"/>
@@ -226,26 +236,25 @@
           </div>
         </details>
       </section>
-      <figure class="interlude" id="unit-circle" role="img" aria-label="Unit circle with a first-quadrant angle theta. The right triangle formed by the radius and the projection onto the horizontal axis has hypotenuse 1, horizontal leg cosine theta, and vertical leg sine theta.">
-        <svg class="sdot" viewBox="0 0 360 244" aria-hidden="true">
+      <figure class="interlude" id="hochschild-chain" role="img" aria-label="A Hochschild chain a zero tensor through a n, with its factors arranged clockwise and the wrap from a n back to a zero highlighted.">
+        <svg class="sdot" viewBox="0 0 360 220" aria-hidden="true">
           <g class="bg echo">
-            <circle cx="164" cy="123" r="106"/>
-            <circle class="faint" cx="164" cy="123" r="122"/>
+            <circle cx="180" cy="110" r="98"/>
+            <circle class="faint" cx="180" cy="110" r="113"/>
           </g>
-          <circle cx="164" cy="123" r="90" fill="none" stroke="currentColor" stroke-width="1"/>
-          <path d="M164 123L236 69V123Z" fill="var(--accent)" opacity=".11"/>
           <g class="arrows">
-            <path d="M39 123H286m-7-5 7 5-7 5M164 225V18m-5 7 5-7 5 7"/>
-            <path class="hl" d="M164 123L236 69V123M192 123a28 28 0 0 0-5.6-16.8"/>
-            <path d="M225 123v-11h11"/>
+            <path d="M198.4 30.1A82 82 0 0 1 250.3 67.8M250.1 59.7L250.3 67.8L243.3 63.8"/>
+            <path d="M261.7 102.9A82 82 0 0 1 241.9 163.8M249.5 161.1L241.9 163.8L243.5 155.9"/>
+            <path d="M212 185.5A82 82 0 0 1 148 185.5M152.8 191.9L148 185.5L156 184.5"/>
+            <path d="M118.1 163.8A82 82 0 0 1 98.3 102.9M93.7 109.5L98.3 102.9L101.7 110.2"/>
+            <path class="hl" d="M109.7 67.8A82 82 0 0 1 161.6 30.1M153.8 27.8L161.6 30.1L155.6 35.6"/>
           </g>
-          <circle cx="236" cy="69" r="3.3" fill="var(--accent)"/>
-          <text class="lbl" x="298" y="128">x</text>
-          <text class="lbl" x="151" y="23">y</text>
-          <text class="lbl" x="200" y="117">θ</text>
-          <text class="lbl" x="197" y="91">1</text>
-          <text class="lbl" x="201" y="145">cos θ</text>
-          <text class="lbl" x="260" y="100">sin θ</text>
+          <text class="i" x="180" y="34">a<tspan baseline-shift="sub" font-size="16">0</tspan></text>
+          <text class="i" x="258" y="92">a<tspan baseline-shift="sub" font-size="16">1</tspan></text>
+          <text class="i" x="228" y="183">a<tspan baseline-shift="sub" font-size="16">2</tspan></text>
+          <text x="132" y="182">⋯</text>
+          <text class="i" x="102" y="92">a<tspan baseline-shift="sub" font-size="16">n</tspan></text>
+          <text x="180" y="117" style="font-size:20px;fill:var(--muted)"><tspan class="i">a</tspan><tspan baseline-shift="sub" font-size="12">0</tspan> ⊗ ⋯ ⊗ <tspan class="i">a</tspan><tspan class="i" baseline-shift="sub" font-size="12">n</tspan></text>
         </svg>
       </figure>
       <section class="section" id="notes" aria-labelledby="notes-title">
