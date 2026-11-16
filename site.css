@@ -1,10 +1,29 @@
 :root { color-scheme:light; --paper:#f6f5ef; --ink:#263c32; --muted:#657168; --line:#d8ddd3; --accent:#b4442c; --soft:#e8ecdf; --card:#eeeee5; }
 :root[data-theme="dark"] { color-scheme:dark; }
 :root[data-theme="dark"] { --paper:#19271f; --ink:#e9eddf; --muted:#b0baab; --line:#3d4b3f; --accent:#ffad90; --soft:#2a3a2d; --card:#223226; }
-:root[data-palette="ualbany"] { --paper:#fbf8f1; --ink:#46166b; --muted:#64566e; --line:#e1cfa0; --accent:#775009; --highlight:#eeb211; --soft:#f6e8c2; --card:#f2ebf5; }
-:root[data-palette="ualbany"][data-theme="dark"] { --paper:#21132e; --ink:#f7edf8; --muted:#ccbcd7; --line:#59416e; --accent:#eeb211; --soft:#412555; --card:#2e1a40; }
-:root[data-palette="union"] { --paper:#f3f0eb; --ink:#401822; --muted:#65545a; --line:#d9c7c9; --accent:#990026; --soft:#efdce0; --card:#f9f5f0; }
-:root[data-palette="union"][data-theme="dark"] { --paper:#231518; --ink:#f3f0eb; --muted:#d3bfc2; --line:#634149; --accent:#ffa1b4; --soft:#512632; --card:#301e23; }
+:root[data-palette="ualbany"] {
+  --paper:#fbf8f1; --ink:#46166b; --muted:#64566e; --line:#e1cfa0; --accent:#775009;
+  --highlight:#eeb211; --soft:#f6e8c2; --card:#f8edcf;
+  --secondary-surface:#eeb211; --secondary-ink:#46166b; --secondary-rule:#bd8509;
+  --button-bg:#eeb211; --button-ink:#46166b;
+}
+:root[data-palette="ualbany"][data-theme="dark"] {
+  --paper:#21132e; --ink:#f7edf8; --muted:#ccbcd7; --line:#65532e; --accent:#eeb211;
+  --soft:#523b15; --card:#362844;
+  --secondary-surface:#483310; --secondary-ink:#ffd15c; --secondary-rule:#eeb211;
+}
+:root[data-palette="union"] {
+  --paper:#f3f0eb; --ink:#401822; --muted:#65545a; --line:#c7c8ca; --accent:#990026;
+  --soft:#dbe7ee; --card:#e8e8e6;
+  --secondary-surface:#d5e3ec; --secondary-ink:#243e50; --secondary-rule:#497791;
+  --button-bg:#365b72; --button-ink:#f3f0eb;
+}
+:root[data-palette="union"][data-theme="dark"] {
+  --paper:#26171b; --ink:#f3f0eb; --muted:#d3bfc2; --line:#615861; --accent:#ffa1b4;
+  --soft:#344656; --card:#343238;
+  --secondary-surface:#2b3e4d; --secondary-ink:#c5e7f4; --secondary-rule:#7bb7d4;
+  --button-bg:#f3f0eb; --button-ink:#990026;
+}
 * { box-sizing:border-box; }
 [hidden] { display:none !important; }
 html { scroll-behavior:smooth; scroll-padding-top:32px; }
@@ -75,7 +94,7 @@ h1 em { font-weight:400; color:var(--accent); }
 .intro + .intro { margin-top:14px; }
 .intro strong { color:var(--ink); font-weight:500; }
 .actions { display:flex; gap:26px; align-items:center; flex-wrap:wrap; margin-top:32px; font-size:14px; }
-.button { display:inline-flex; align-items:center; gap:22px; background:var(--ink); color:var(--paper); padding:12px 19px; border-radius:3px; text-decoration:none; }
+.button { display:inline-flex; align-items:center; gap:22px; background:var(--button-bg,var(--ink)); color:var(--button-ink,var(--paper)); padding:12px 19px; border-radius:3px; text-decoration:none; }
 .button:hover { color:var(--paper); background:var(--accent); }
 .text-link { text-decoration:none; border-bottom:1px solid var(--line); }
 .art { position:relative; display:grid; max-width:300px; place-items:center; aspect-ratio:1; background:var(--soft); border-radius:48% 48% 3px 3px; overflow:hidden; }
@@ -194,4 +213,20 @@ nav a[aria-current="page"] { color:var(--accent); text-decoration:underline; }
   .page-intro h1 { font-size:clamp(42px,12vw,62px); }
   .photos { padding-bottom:42px; }
   .photo-row { grid-template-columns:1fr; }
+}
+
+:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs {
+  padding-inline:12px;
+  background:var(--secondary-surface);
+  border-color:var(--secondary-rule);
+  color:var(--secondary-ink);
+}
+:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs a { color:inherit; }
+:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs a:hover { text-decoration:underline; }
+:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs a[aria-current="true"] { border-bottom-color:currentColor; }
+:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs a span { opacity:1; }
+:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs a[aria-current="true"] span { color:inherit; }
+:root:is([data-palette="ualbany"], [data-palette="union"]) .section h2 {
+  border-inline-start:3px solid var(--secondary-rule);
+  padding-inline-start:12px;
 }
