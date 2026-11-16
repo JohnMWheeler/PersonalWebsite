@@ -1,9 +1,13 @@
 let siteTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+let sitePalette = 'forest';
 try {
   const saved = localStorage.getItem('personal-site-theme');
   if (saved === 'light' || saved === 'dark') siteTheme = saved;
+  const savedPalette = localStorage.getItem('personal-site-palette');
+  if (savedPalette === 'ualbany' || savedPalette === 'union') sitePalette = savedPalette;
 } catch (_) { /* Storage may be unavailable for local files. */ }
 document.documentElement.dataset.theme = siteTheme;
+document.documentElement.dataset.palette = sitePalette;
 
 document.addEventListener('DOMContentLoaded', () => {
   for (const disclosure of document.querySelectorAll('.section-disclosure')) {
@@ -56,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.getElementById('year').textContent = new Date().getFullYear();
+  const themePalette = document.getElementById('theme-palette');
   const themeToggle = document.getElementById('theme-toggle');
   function updateThemeLabel() {
     const label = siteTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
@@ -63,7 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.title = label;
   }
   updateThemeLabel();
-  themeToggle.hidden = false;
+  themePalette.value = sitePalette;
+  document.getElementById('theme-controls').hidden = false;
+  themePalette.addEventListener('change', () => {
+    document.documentElement.dataset.palette = themePalette.value;
+    try { localStorage.setItem('personal-site-palette', themePalette.value); } catch (_) { /* Applies for this visit. */ }
+  });
   themeToggle.addEventListener('click', () => {
     siteTheme = siteTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = siteTheme;
