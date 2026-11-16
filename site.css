@@ -2,27 +2,24 @@
 :root[data-theme="dark"] { color-scheme:dark; }
 :root[data-theme="dark"] { --paper:#19271f; --ink:#e9eddf; --muted:#b0baab; --line:#3d4b3f; --accent:#ffad90; --soft:#2a3a2d; --card:#223226; }
 :root[data-palette="ualbany"] {
-  --paper:#fbf8f1; --ink:#46166b; --muted:#64566e; --line:#e1cfa0; --accent:#775009;
-  --highlight:#eeb211; --soft:#f6e8c2; --card:#f8edcf;
-  --secondary-surface:#eeb211; --secondary-ink:#46166b; --secondary-rule:#bd8509;
-  --button-bg:#eeb211; --button-ink:#46166b;
+  --paper:#fbf7ee; --page-wash:#f3e8d0; --ink:#382d42; --heading:#46166b;
+  --muted:#65596d; --line:#d2bf98; --accent:#785626; --soft:#efe5d0; --card:#f2e9d8;
+  --button-bg:#46166b; --button-ink:#fbf7ee;
 }
 :root[data-palette="ualbany"][data-theme="dark"] {
-  --paper:#21132e; --ink:#f7edf8; --muted:#ccbcd7; --line:#65532e; --accent:#eeb211;
-  --soft:#523b15; --card:#362844;
-  --secondary-surface:#483310; --secondary-ink:#ffd15c; --secondary-rule:#eeb211;
+  --paper:#211729; --page-wash:#362642; --ink:#eee5f2; --heading:#ead4ae;
+  --muted:#d0c1d6; --line:#7b6651; --accent:#d2b27d; --soft:#3f3048; --card:#302439;
+  --button-bg:#4e365e; --button-ink:#fbefd9;
 }
 :root[data-palette="union"] {
-  --paper:#f3f0eb; --ink:#401822; --muted:#65545a; --line:#c7c8ca; --accent:#990026;
-  --soft:#dbe7ee; --card:#e8e8e6;
-  --secondary-surface:#d5e3ec; --secondary-ink:#243e50; --secondary-rule:#497791;
-  --button-bg:#365b72; --button-ink:#f3f0eb;
+  --paper:#f3f0eb; --page-wash:#f1e1dc; --ink:#302829; --heading:#800421;
+  --muted:#645759; --line:#cebfbc; --accent:#990026; --soft:#e9ddd8; --card:#eae4df;
+  --button-bg:#990026; --button-ink:#fff8f1;
 }
 :root[data-palette="union"][data-theme="dark"] {
-  --paper:#26171b; --ink:#f3f0eb; --muted:#d3bfc2; --line:#615861; --accent:#ffa1b4;
-  --soft:#344656; --card:#343238;
-  --secondary-surface:#2b3e4d; --secondary-ink:#c5e7f4; --secondary-rule:#7bb7d4;
-  --button-bg:#f3f0eb; --button-ink:#990026;
+  --paper:#24191c; --page-wash:#431e28; --ink:#f3f0eb; --heading:#f4e4d4;
+  --muted:#d1c3c0; --line:#73585d; --accent:#eca6ab; --soft:#3c2b2e; --card:#31282a;
+  --button-bg:#f3f0eb; --button-ink:#800421;
 }
 * { box-sizing:border-box; }
 [hidden] { display:none !important; }
@@ -50,7 +47,7 @@ header { display:flex; flex-wrap:wrap; justify-content:space-between; align-item
 .brand { grid-area:brand; }
 .wordmark { margin:0; font:inherit; font-size:24px; font-weight:650; letter-spacing:-.7px; }
 .wordmark a { text-decoration:none; }
-.wordmark span { color:var(--highlight,var(--accent)); }
+.wordmark span { color:var(--accent); }
 .affiliation { display:block; width:fit-content; color:var(--muted); font-size:13px; line-height:1.4; text-decoration:none; }
 .affiliation:hover { text-decoration:underline; }
 nav { display:flex; flex-wrap:wrap; align-items:center; gap:18px 24px; font-size:14px; }
@@ -215,18 +212,12 @@ nav a[aria-current="page"] { color:var(--accent); text-decoration:underline; }
   .photo-row { grid-template-columns:1fr; }
 }
 
-:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs {
-  padding-inline:12px;
-  background:var(--secondary-surface);
-  border-color:var(--secondary-rule);
-  color:var(--secondary-ink);
+:root:is([data-palette="ualbany"], [data-palette="union"]) body {
+  background:radial-gradient(ellipse 82rem 39rem at 10% 0, var(--page-wash), transparent 78%), var(--paper);
 }
-:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs a { color:inherit; }
-:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs a:hover { text-decoration:underline; }
-:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs a[aria-current="true"] { border-bottom-color:currentColor; }
-:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs a span { opacity:1; }
-:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs a[aria-current="true"] span { color:inherit; }
-:root:is([data-palette="ualbany"], [data-palette="union"]) .section h2 {
-  border-inline-start:3px solid var(--secondary-rule);
-  padding-inline-start:12px;
+:root:is([data-palette="ualbany"], [data-palette="union"]) :is(.wordmark, .section h2) { color:var(--heading); }
+:root:is([data-palette="ualbany"], [data-palette="union"]) .hero-photo {
+  outline:1px solid var(--line);
+  outline-offset:4px;
 }
+:root:is([data-palette="ualbany"], [data-palette="union"]) .panel-tabs a[aria-current="true"] { color:var(--accent); }
